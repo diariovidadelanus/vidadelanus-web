@@ -1,0 +1,225 @@
+/* 1. ESTILOS GENERALES Y BASE */
+body { 
+    font-family: sans-serif; 
+    line-height: 1.6; 
+    margin: 0; 
+    background-color: #ebebeb !important; 
+    color: #333; 
+}
+
+/* Contenedor principal: móvil por defecto, PC se activa abajo */
+.container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+}
+
+/* 2. HEADER (Azul y Blanco) */
+header { 
+    text-align: center; 
+    padding: 10px; 
+    background: #004080; 
+    border-bottom: 3px solid #002d59; 
+}
+
+header h1 { 
+    color: #ffffff; 
+    margin: 0; 
+    font-size: 3.5rem; 
+    font-weight: 800; 
+    letter-spacing: -2px; 
+}
+
+/* 3. MENÚ DE NAVEGACIÓN */
+nav { 
+    margin-top: 15px; 
+    display: flex;          /* Activamos flexbox */
+    justify-content: center; /* Centra los botones */
+    flex-wrap: wrap;        /* Si no entran, bajan ordenadamente */
+    gap: 10px;              /* Espacio uniforme entre botones */
+}
+
+nav a { 
+    text-decoration: none; 
+    color: #ffffff; 
+    font-weight: bold; 
+    padding: 8px 15px;      /* Un poco más de área para tocar con el dedo */
+    transition: 0.3s;
+    font-size: 0.95rem;     /* Ajustamos un pelín el tamaño para móvil */
+    white-space: nowrap;    /* Evita que una palabra se corte a la mitad */
+}
+
+nav a:hover { 
+    background: rgba(255,255,255,0.2); 
+    border-radius: 5px;
+}
+
+/* 4. BLOQUES DE NOTICIAS (Con el efecto que hablamos) */
+.noticia { 
+    background: #fff; 
+    padding: 30px; 
+    margin-bottom: 5px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Sombra suave */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.noticia h2 { color: #004080; margin-top: 10px; }
+.fecha { color: #666; font-size: 0.9rem; font-weight: bold; }
+
+/* 5. DISEÑO DE COLUMNAS PARA PC (Escritorio) */
+@media (min-width: 800px) {
+    .container {
+        flex-direction: row; 
+        align-items: flex-start;
+    }
+
+    .noticias-lista {
+        flex: 3; 
+        display: flex;
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    .sidebar {
+        flex: 1; 
+        background: #fff; 
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+}
+
+/* 6. BARRA LATERAL (WIDGETS) */
+.widget h3 {
+    color: #004080; /* Azul como el header */
+    margin-top: 0;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #f4f4f4;
+    padding-bottom: 10px;
+}
+.widget ul { list-style: none; padding: 0; }
+.widget li { margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; 
+}
+
+.sidebar .widget iframe, 
+.sidebar .widget div {
+    max-width: 100% !important;
+    overflow: hidden;
+}
+
+/* 7. MULTIMEDIA Y OTROS */
+.noticia img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 8px;
+}
+
+.video-contenedor {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin: 15px 0;
+}
+.video-contenedor iframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border-radius: 8px;
+}
+
+footer { text-align: center; padding: 40px; font-size: 0.9rem; color: #666; }
+
+.noticia img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 8px;
+    /* --- Agrega esto para que las fotos se vean mejor --- */
+    object-fit: cover; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+}
+
+/* 8. AJUSTES MÓVILES */
+@media (max-width: 600px) {
+    header h1 { font-size: 2.2rem; }
+    .noticia { padding: 20px; }
+}
+
+.seccion-centrada {
+    max-width: 600px; /* Limitamos el ancho para que sea fácil de leer */
+    margin: 0 auto;   /* Centra el bloque horizontalmente */
+    text-align: left; /* Mantiene el texto alineado a la izquierda dentro del bloque centrado */
+}
+
+/* Opcional: Centrar también los títulos principales si prefieres */
+.seccion-centrada h2, 
+.seccion-centrada p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    background-color: #25d366;
+    color: white !important;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.btn-whatsapp:hover {
+    background-color: #128c7e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Esto fuerza a que el enlace se vea siempre igual */
+.sidebar .widget a:visited {
+    color: #004080; /* Cambiá este color por el que vos quieras */
+    text-decoration: none;
+}
+
+/* Unifica el color de todos los enlaces en el widget, visitados o no */
+.widget a, 
+.widget a:visited, 
+.widget a:hover, 
+.widget a:active {
+    color: #004080; /* El azul que usás en tu sitio */
+}
+
+.boton-contacto {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  
+  /* Color rojo */
+  background-color: #dc3545; 
+  color: white;
+  
+  padding: 15px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  z-index: 1000;
+  
+  /* Transición suave para el color */
+  transition: background-color 0.3s ease;
+}
+
+.boton-contacto:hover {
+  /* Un rojo un poco más oscuro al pasar el mouse */
+  background-color: #a71d2a;
+}
