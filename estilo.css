@@ -135,7 +135,7 @@ nav a:hover {
 
 footer { text-align: center; padding: 40px; font-size: 0.9rem; color: #666; }
 
-.noticia img {
+/*.noticia img {
     max-width: 100%;
     height: auto;
     display: block;
@@ -144,6 +144,22 @@ footer { text-align: center; padding: 40px; font-size: 0.9rem; color: #666; }
     /* --- Agrega esto para que las fotos se vean mejor --- */
     object-fit: cover; 
     box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+}*/
+
+/* 8 BIS FOTOS NUEVA Definimos una clase independiente */
+.img-cloudinary {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Mantiene la imagen como bloque para evitar espacios fantasma abajo */
+    margin: 1.5rem auto; /* Usamos rem para mejor escalabilidad en 2026 */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra más suave y moderna */
+    transition: transform 0.3s ease; /* Para que se sienta más fluido al cargar */
+}
+
+/* Evitamos que el margen superior moleste si es la primera foto del post */
+.img-cloudinary:first-of-type {
+    margin-top: 0;
 }
 
 /* 8. AJUSTES MÓVILES */
