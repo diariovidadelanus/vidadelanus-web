@@ -1,5 +1,4 @@
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
     // 1. Buscamos todas las notas dentro de tu contenedor principal
     const notas = document.querySelectorAll('.noticias-lista .noticia');
     
@@ -23,4 +22,3 @@
     }
     console.log("Sistema de archivo automático: " + notas.length + " notas procesadas.");
   });
-</script>
