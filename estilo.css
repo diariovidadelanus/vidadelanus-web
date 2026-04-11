@@ -239,3 +239,47 @@ footer { text-align: center; padding: 40px; font-size: 0.9rem; color: #666; }
   /* Un rojo un poco más oscuro al pasar el mouse */
   background-color: #a71d2a;
 }
+
+.pop-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    z-index: 100000; /* Bien arriba */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pop-caja {
+    position: relative;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 90%;
+}
+
+.pop-cerrar {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: #dc3545; /* Tu rojo */
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: Arial;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.pop-caja img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
